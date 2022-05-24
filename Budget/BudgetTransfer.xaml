@@ -1,0 +1,295 @@
+﻿<Window x:Class="G8FinApp.Budget.BudgetTransfer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Budget"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title='Budget Transfer'
+        Height="700" Width="1200">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Grid Grid.ColumnSpan="3" Grid.RowSpan ="21"
+              Background="SteelBlue">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Image Source="nrdct.png"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4">
+                </Image>
+
+                <TextBlock 
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="4"
+                    FontSize="12"
+                    HorizontalAlignment="Center"
+                    Foreground="White">Transfer Budget</TextBlock>
+            </Grid>
+
+            <TextBlock
+            Grid.Column="4"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Id</TextBlock>
+
+            <TextBlock
+            Grid.Column="4"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Fm No</TextBlock>
+
+            <TextBlock
+            Grid.Column="4"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Fm Name</TextBlock>
+
+            <TextBlock
+            Grid.Column="4"
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Cisi Code</TextBlock>
+
+            <TextBlock
+            Grid.Column="4"
+            Grid.Row="9"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Cisi Description</TextBlock>
+
+            <TextBlock
+            Grid.Column="8"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Currency</TextBlock>
+
+            <TextBlock
+            Grid.Column="8"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Available Amount</TextBlock>
+
+            <TextBlock
+            Grid.Column="8"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom" >Transfer Amount</TextBlock>
+
+            <TextBlock
+            Grid.Column="8"
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom" >Date</TextBlock>
+
+            <TextBox    
+            x:Name="txtId"
+            Grid.Column="4"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+
+            <TextBox
+            x:Name="txtFmNo"
+            Grid.Column="4"
+            Grid.Row="4"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+
+            <TextBox
+            x:Name="txtFmName"
+            Grid.Column="4"
+            Grid.Row="6"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+
+
+            <TextBox
+            x:Name="txtCisiCode"
+            Grid.Column="4"
+            Grid.Row="8"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            IsEnabled="False">
+            </TextBox>
+
+            <TextBox
+            x:Name="txtCisiDesc"
+            Grid.Column="4"
+            Grid.Row="10"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False">
+
+
+            </TextBox>
+
+            <TextBox
+            x:Name="txtBdgtCurr"
+            Grid.Column="8"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False">
+            </TextBox>
+
+            <TextBox
+            x:Name="txtAmount"
+            Grid.Column="8"
+            Grid.Row="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False">
+            </TextBox>
+
+            <TextBox
+            x:Name="txtTransAmount"
+            Grid.Column="8"
+            Grid.Row="6"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center" 
+            LostFocus="TxtTransAmount_LostFocus">
+            </TextBox>
+
+            <DatePicker
+            x:Name="txtDate"
+            Grid.Column="8"
+            Grid.Row="8"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            SelectedDate="{x:Static sys:DateTime.Today}">
+            </DatePicker>
+
+            <Button
+            x:Name="BtnSave"
+            Grid.Column="9"
+            Grid.Row="10"
+            Grid.ColumnSpan="2"
+                Click="BtnSave_Click">Save</Button>
+
+            <ListView
+            x:Name="LstBdgtDetail"
+            Grid.Column="4"
+            Grid.Row="12"
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="7">
+
+                <ListView.View>
+
+                    <GridView>
+
+                        <GridViewColumn x:Name="ID"
+                                    DisplayMemberBinding="{Binding Path=ID}"
+                                    Header="ID"
+                                    Width="50" />
+
+                        <GridViewColumn x:Name="FMNO"
+                                    DisplayMemberBinding="{Binding Path=FMNO}"
+                                    Header="FmNo"
+                                    Width="100" />
+
+                        <GridViewColumn x:Name="FMNAME"
+                                    DisplayMemberBinding="{Binding Path=FMNAME}"
+                                    Header="FmName"
+                                    Width="100" />
+
+                        <GridViewColumn x:Name="CISICODE"
+                                    DisplayMemberBinding="{Binding Path=CISICODE}"
+                                    Header="CisiCode"
+                                    Width="100" />
+
+                        <GridViewColumn x:Name="CISIDESC"
+                                    DisplayMemberBinding="{Binding Path=CISIDESC}"
+                                    Header="CisiDesc"
+                                    Width="100" />
+
+                        <GridViewColumn x:Name="BDGTCURR"
+                                    DisplayMemberBinding="{Binding Path=BDGTCURR}"
+                                    Header="Currency"
+                                    Width="100" />
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+        </Grid>
+    </Grid>
+
+</Window>

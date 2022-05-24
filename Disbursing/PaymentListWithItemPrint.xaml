@@ -1,0 +1,402 @@
+﻿<Window x:Class="G8FinApp.Disbursing.PaymentListWithItemPrint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Disbursing"
+        mc:Ignorable="d"
+        Title="PaymentListWithItemPrint" Height="750" Width="1000">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TextBlockFont">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="9" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5,0,0,0" />
+        </Style>
+
+        <Style TargetType="Border"  x:Key="HeaderCellBorder">
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0.25" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Grid.RowSpan" Value="2" />
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Button
+            x:Name="BtnPrint"
+            Click="Button_Click"
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.ColumnSpan="2">
+            Print
+        </Button>
+
+        <FixedPage
+            
+            x:Name="FixPageMain"
+            Grid.Column="1"
+            Grid.Row="3"
+            Grid.ColumnSpan="10"
+            Grid.RowSpan="21">
+
+            <Border
+                BorderBrush="Black"
+                BorderThickness="0"
+                Margin="40">
+
+                <Grid
+                    Width="700"
+                    Height="500">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition />
+                        <RowDefinition />
+
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Style="{StaticResource TextBlockFont}"
+                        Margin="0,0,0,0"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2">5135/BUDFIN/33/81</TextBlock>
+
+                    <TextBlock
+                        TextAlignment="Right"
+                        Style="{StaticResource TextBlockFont}"
+                        Margin="0,0,0,0"
+                        Grid.Column="10"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2">29 Temmuz 2022</TextBlock>
+
+                    <TextBlock
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="12"
+                        HorizontalAlignment="Center"
+                        FontSize="12"
+                        FontWeight="Bold">
+                        PAYMENT LIST / ÖDEME LİSTESİ</TextBlock>
+
+                    <Border
+                        x:Name="MainBorder"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="12"
+                        Grid.RowSpan="10"
+                        BorderBrush="Black"
+                        BorderThickness="0">
+
+                        <Grid
+                            x:Name="MainGrid"
+                            Width="700"
+                            Height="500">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+
+                            </Grid.RowDefinitions>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="0"
+                                Grid.Row="0">
+                                <TextBlock
+                                    Style="{StaticResource TextBlockFont}">
+                                Sıra No
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Satıcının/Şirketin Adı
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="3"
+                                Grid.ColumnSpan="3">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Satıcının/Şirketin Adresi
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="6"
+                                Grid.ColumnSpan="2">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Banka/Şube Adı
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="8"
+                                Grid.ColumnSpan="3">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Hesap No/IBAN No
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="11"
+                                Grid.ColumnSpan="2">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Dekont Açıklaması
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Column="13"
+                                Grid.ColumnSpan="3">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Toplam Tutarı
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="1">
+                                <TextBlock
+                                Style="{StaticResource TextBlockFont}">
+                                Item No
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2">
+                                <TextBlock
+                                    TextWrapping="Wrap"
+                                    Style="{StaticResource TextBlockFont}">
+                                    Vendor/Company Name
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="3"
+                                Grid.ColumnSpan="3">
+                                <TextBlock
+                                    Style="{StaticResource TextBlockFont}">
+                                    Vendor/Company Address
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="6"
+                                Grid.ColumnSpan="2">
+                                <TextBlock
+                                    Style="{StaticResource TextBlockFont}">
+                                    Bank/Branch Name
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="8"
+                                Grid.ColumnSpan="3">
+                                <TextBlock
+                                    Height="Auto"
+                                    TextWrapping="Wrap"
+                                    Style="{StaticResource TextBlockFont}">
+                                    IBAN Number
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="11"
+                                Grid.ColumnSpan="2">
+                                <TextBlock
+                                    Style="{StaticResource TextBlockFont}">
+                                    Invoice Number
+                                </TextBlock>
+                            </Border>
+
+                            <Border
+                                Style="{StaticResource HeaderCellBorder}"
+                                Grid.Row="2"
+                                Grid.Column="13"
+                                Grid.ColumnSpan="3">
+                                <TextBlock
+                                    Style="{StaticResource TextBlockFont}">
+                                    Total Amount
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+
+                    </Border>
+                </Grid>
+
+            </Border>
+
+        </FixedPage>
+    </Grid>
+
+</Window>

@@ -1,0 +1,311 @@
+﻿<Window x:Class="G8FinApp.Disbursing.DisbursingCashCall"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Disbursing"
+        mc:Ignorable="d"
+        Title="DisbursingCashCall" 
+        Height="700" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan ="24"
+              Background="SteelBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Source="nrdct.png"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="3">
+            </Image>
+
+            <TextBlock 
+                Grid.Column="0"
+                Grid.Row="3"
+                Grid.ColumnSpan="5"
+                FontSize="12"
+                Foreground="White"
+                HorizontalAlignment="Center">
+                Cash Call Enter
+            </TextBlock>
+        </Grid>
+        
+        <!--Countries-->
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Countries</TextBlock>
+        <TextBox
+            x:Name="TxtCountries"
+            Grid.Row="2"
+            Grid.Column="4"
+            Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            IsEnabled="False">
+        </TextBox>
+        <!--Countries-->
+
+        <!--Planned Payments-->
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Planned Payment</TextBlock>
+        <TextBox
+            x:Name="TxtPlannedPayment"
+            Grid.Row="4"
+            Grid.Column="4"
+            Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"/>
+        <!--Planned Payments-->
+
+        <!--Payment Amount-->
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="10"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Payment Amount</TextBlock>
+        <TextBox
+            x:Name="TxtPaymentAmount"
+            Grid.Row="4"
+            Grid.Column="10"
+            Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            LostKeyboardFocus="TxtPaymentAmount_LostKeyboardFocus"
+            IsEnabled="True"/>
+        <!--Payment Amount-->
+
+        <!--Invoice Number-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="10"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Invoice Number</TextBlock>
+        <TextBox
+            x:Name="TxtInvoiceNumber"
+            Grid.Row="6"
+            Grid.Column="10"
+            Grid.ColumnSpan="4"
+            VerticalContentAlignment="Center"
+            IsEnabled="True"/>
+        <!--Invoice Number-->
+
+        <!--Payment Date-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="4"
+            Grid.ColumnSpan="4"
+            VerticalAlignment="Bottom">Payment Date</TextBlock>
+        <DatePicker
+            x:Name="TxtPaymentDate"
+            Grid.Row="6"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            FirstDayOfWeek="Monday">
+        </DatePicker>
+        <!--Planned Payment Date-->
+        <Button
+            x:Name="BtnSave"
+            Grid.Row="6"
+            Grid.Column="15"
+            Grid.ColumnSpan="2" Click="BtnSave_Click">Save</Button>
+        
+        <!--Remarks-->
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="10"
+            Grid.ColumnSpan="4"
+            VerticalAlignment="Bottom">Remarks</TextBlock>
+        <TextBox
+            x:Name="TxtRemarks"
+            Grid.Row="2"
+            Grid.Column="10"
+            Grid.ColumnSpan="6"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+        <!--Remarks-->
+        
+        <!--LstMain-->
+        <ListView
+            x:Name="LstMain"
+            Grid.Row="8"
+            Grid.Column="4"
+            Grid.ColumnSpan="13"
+            Grid.RowSpan="10"
+            MouseDoubleClick="LstMain_MouseDoubleClick">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete"
+                              Click="LstMain_Delete"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID"
+                                    Width="75"
+                                    DisplayMemberBinding="{Binding Path=ID}"/>
+                    <GridViewColumn Header="Country"
+                                    Width="250"
+                                    DisplayMemberBinding="{Binding Path=CountryName}"/>
+                    <GridViewColumn Header="Remarks"
+                                    Width="300"
+                                    DisplayMemberBinding="{Binding Path=Remarks}"/>
+                    <GridViewColumn Header="Planned Date"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=PlannedPaymentDate, StringFormat={}{0:dd-MMM-yyyy}}"/>
+                    <GridViewColumn Header="Planned Amount"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=PlannedPayment, StringFormat={}{0:#,#.0000}}"/>
+                    <GridViewColumn Header="Payment Date"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=PaymentDate, StringFormat={}{0:dd-MMM-yyyy}}"/>
+                    <GridViewColumn Header="Payment Amount"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=PaymentAmount, StringFormat={}{0:#,#.0000}}"/>
+                    <GridViewColumn Header="Invoice Number"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=InvoiceNumber}"/>
+                    <GridViewColumn Header="Commit Date"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=CommitDate, StringFormat={}{0:dd-MMM-yyyy}}"/>
+                    <GridViewColumn Header="Commit Number"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=CommitNumber}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--LstMain-->
+
+        <!--LstMainPlannedPaymentTotal-->
+        <TextBlock
+            Grid.Row="19"
+            Grid.Column="12"
+            Grid.ColumnSpan="2"
+            FontWeight="Bold"
+            VerticalAlignment="Center">(Planned Payment)</TextBlock>
+        <TextBlock
+            Grid.Row="19"
+            Grid.Column="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center">Total:</TextBlock>
+        <TextBox
+            x:Name="TxtLstMainPlannedPaymentTotal"
+            Grid.Row="19"
+            Grid.Column="15"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Right"
+            FontWeight="Bold"
+            IsEnabled="False"></TextBox>
+        <!--LstMainPlannedPaymentTotal-->
+
+        <!--LstMainPaymentAmountTotal-->
+        <TextBlock
+            Grid.Row="20"
+            Grid.Column="12"
+            FontWeight="Bold"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center">(Payment Amount)</TextBlock>
+        <TextBlock
+            Grid.Row="20"
+            Grid.Column="14"
+            FontWeight="Bold"
+            VerticalAlignment="Center">Total:</TextBlock>
+        <TextBox
+            x:Name="TxtLstMainPaymentAmountTotal"
+            Grid.Row="20"
+            Grid.Column="15"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Right"
+            FontWeight="Bold"
+            IsEnabled="False"></TextBox>
+        <!--LstMainTotal-->
+
+    </Grid>
+</Window>

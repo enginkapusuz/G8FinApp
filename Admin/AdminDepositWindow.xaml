@@ -1,0 +1,80 @@
+﻿<Window x:Class="G8FinApp.Admin.AdminDepositWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Admin"
+        mc:Ignorable="d"
+        Title="AdminDepositWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ListView
+            x:Name="LstMain"
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.ColumnSpan="10"
+            Grid.RowSpan="5">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn
+                            Header="Year"
+                            DisplayMemberBinding="{Binding Path=Year}"/>
+                        <GridViewColumn
+                            Header="CommitNo"
+                            DisplayMemberBinding="{Binding Path=CommitNo}"/>
+                        <GridViewColumn
+                            Header="InvoiceNu"
+                            DisplayMemberBinding="{Binding Path=InvoiceNu}"/>
+                        <GridViewColumn
+                            Header="InvoiceAmount"
+                            DisplayMemberBinding="{Binding Path=InvoiceAmount, StringFormat={}{0:#,#.00}}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="5">Total</TextBlock>
+        <TextBlock
+            x:Name="txtTotal"
+            Grid.Row="6"
+            Grid.Column="6"
+            Grid.ColumnSpan="3"></TextBlock>
+    </Grid>
+</Window>
+
+    

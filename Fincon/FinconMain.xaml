@@ -1,0 +1,219 @@
+﻿<Window x:Class="G8FinApp.Fincon.FinconMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Fincon"
+        mc:Ignorable="d"
+        Title="FinconMain" Height="850" Width="1500"
+        WindowState="Maximized">
+    <Window.Resources>
+        <local:FinconApproveMain x:Key="FinconApproveMain" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="15"
+            Background="SteelBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Image
+                Source="nrdct.png"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                ></Image>
+
+            <TextBlock
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Grid.Row="5"
+                Foreground="White"
+                FontSize="14"
+                Padding="35,5,0,0">
+                Fincon
+            </TextBlock>
+            
+        </Grid>
+
+        <Menu
+            Grid.Column="4"
+            Grid.ColumnSpan="7"
+            Background="White">
+
+            <MenuItem>
+                <MenuItem.Header>Approve</MenuItem.Header>
+                <MenuItem 
+                    Header="SendTo"
+                    Click="OpenFinconSendTo">
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem>
+                <MenuItem.Header>Pending</MenuItem.Header>
+                <MenuItem
+                    Header="Pending List"
+                    Click="OpenPendingList"></MenuItem>
+            </MenuItem>
+            <MenuItem>
+                <MenuItem.Header>Budget</MenuItem.Header>
+                <MenuItem
+                    Header="Budget Form"
+                    Click="OpenFiscalBudget"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <TextBlock
+            Grid.Column="7"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            FontSize="14"
+            FontWeight="Bold">Approve List</TextBlock>
+
+        <ListView
+            x:Name="LstMain"
+            ItemsSource="{Binding Source={StaticResource FinconApproveMain}}"
+            Grid.Column="4"
+            Grid.Row="2"
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="5">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete"
+                              Click="LstMain_Delete"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id"  
+                    DisplayMemberBinding="{Binding Path=MAININD}" Width="50" />
+                    <GridViewColumn Header="EncumId"  
+                    DisplayMemberBinding="{Binding Path=ENCUMID}" Width="50" />
+                    <GridViewColumn Header="Desc" 
+                    DisplayMemberBinding="{Binding Path=REQDESC}" Width="600" />
+                    <GridViewColumn Header="Sender" 
+                    DisplayMemberBinding="{Binding Path=SENDTO}" Width="100" />
+                    <GridViewColumn Header="FmName" 
+                    DisplayMemberBinding="{Binding Path=FMNAME}" Width="100" />
+                    <GridViewColumn Header="Amount" 
+                    DisplayMemberBinding="{Binding Path=REQAMOUNT, StringFormat='{}{0:#,#.0000}'}" Width="100" />
+                    <GridViewColumn Header="Currency" 
+                    DisplayMemberBinding="{Binding Path=REQCURR}" Width="100" />
+                    <GridViewColumn Header="Approve Date" 
+                    DisplayMemberBinding="{Binding Path=APPDATE, StringFormat='{}{0:dd-MM-yyyy}'}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <TextBlock
+            Grid.Column="7"
+            Grid.Row="7"
+            VerticalAlignment="Center"
+            FontSize="14"
+            FontWeight="Bold">Approved List</TextBlock>
+
+        <ListView
+            x:Name="LstMainApproved"
+            Grid.Column="4"
+            Grid.Row="8"
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="5">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id"  
+                    DisplayMemberBinding="{Binding Path=MAININD}" Width="50" />
+                    <GridViewColumn Header="EncumId"  
+                    DisplayMemberBinding="{Binding Path=ENCUMID}" Width="50" />
+                    <GridViewColumn Header="Desc" 
+                    DisplayMemberBinding="{Binding Path=REQDESC}" Width="600" />
+                    <GridViewColumn Header="Sender" 
+                    DisplayMemberBinding="{Binding Path=SENDTO}" Width="100" />
+                    <GridViewColumn Header="FmName" 
+                    DisplayMemberBinding="{Binding Path=FMNAME}" Width="100" />
+                    <GridViewColumn Header="Amount" 
+                    DisplayMemberBinding="{Binding Path=REQAMOUNT, StringFormat='{}{0:#,#.0000}'}" Width="100" />
+                    <GridViewColumn Header="Currency" 
+                    DisplayMemberBinding="{Binding Path=REQCURR}" Width="100" />
+                    <GridViewColumn Header="Approve Date" 
+                    DisplayMemberBinding="{Binding Path=APPDATE, StringFormat='{}{0:dd-MM-yyyy}'}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>

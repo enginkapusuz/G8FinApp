@@ -1,0 +1,173 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp"
+        xmlns:Properties="clr-namespace:G8FinApp.Properties" x:Class="G8FinApp.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1200"
+        MinHeight="700" MinWidth="1200"
+    WindowState="Maximized">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" 
+              Grid.RowSpan="25" 
+              Grid.ColumnSpan="4"
+              Background="SteelBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Image Source="nrdct.png"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
+                   Grid.RowSpan="3"
+                   MaxHeight="250"
+                   MaxWidth="125">
+                <Image.DataContext>
+                    <Properties:Resources/>
+                </Image.DataContext>
+            </Image>
+
+            <TextBlock 
+            Grid.Row="8"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="22"
+            FontWeight="Bold"
+            Foreground="White">
+                <Run Text="Fin8"/></TextBlock>
+
+
+            <TextBlock 
+                Grid.Row="18"
+                Grid.Column="5"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                FontSize="10"
+                FontWeight="Bold"
+                Foreground="White"
+                ><Run Text="2022"/></TextBlock>
+
+        </Grid>
+        
+        <Menu 
+            Grid.Column="5" 
+            Grid.ColumnSpan="10"
+            Background="White">
+            <MenuItem Grid.Column="0">
+                <MenuItem.Header>Login</MenuItem.Header>
+                <MenuItem Header="Fincon" Click="OpenBudgetLogin" x:Name="Fincon" />
+                <MenuItem Header="Budget" Click="OpenBudgetLogin" x:Name="Budget" />
+                <MenuItem Header="Fiscal" Click="OpenBudgetLogin" x:Name="Fiscal" />
+                <MenuItem Header="P&amp;C" Click="OpenBudgetLogin" x:Name="PC"/>
+                <MenuItem Header="Disbursing"  Click="OpenBudgetLogin" x:Name="Disbursing" />
+                <MenuItem Header="Travel" Click="OpenBudgetLogin" x:Name="Travel" />
+                <MenuItem Header="Admin" Click="OpenBudgetLogin" x:Name="Admin"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>

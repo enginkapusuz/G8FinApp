@@ -1,0 +1,219 @@
+﻿<Window x:Class="G8FinApp.Disbursing.DisbursingMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Disbursing"
+        mc:Ignorable="d"
+        Title="Disbursing Main" Height="850" Width="1500"
+        WindowState="Maximized">
+    <Window.Resources>
+        <local:ApproveMain x:Key="ApproveMain" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="15"
+            Background="SteelBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Image
+                Source="nrdct.png"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                ></Image>
+
+            <TextBlock
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="5"
+                Foreground="White"
+                FontSize="14"
+                HorizontalAlignment="Center">
+                Disbursing
+            </TextBlock>
+        </Grid>
+        <Menu
+            Grid.Column="4"
+            Grid.ColumnSpan="7"
+            Background="White">
+            <MenuItem>
+                <MenuItem.Header>Account</MenuItem.Header>
+                <MenuItem Header="Add New Account"
+                          Click="OpenNewAccount"></MenuItem>
+                <MenuItem Header="Enter Open Amount"></MenuItem>
+            </MenuItem>
+            <MenuItem>
+                <MenuItem.Header>Payment</MenuItem.Header>
+                <MenuItem Header="Open Payment List"
+                          Click="OpenPaymentList"></MenuItem>
+            </MenuItem>
+            <MenuItem>
+                <MenuItem.Header>Deposit</MenuItem.Header>
+                <MenuItem Header="New Deposit"
+                          Click="OpenNewDeposit"></MenuItem>
+                <MenuItem Header="Return Depoist"
+                          Click="OpenReturnDepoist"></MenuItem>
+            </MenuItem>
+            <MenuItem>
+                <MenuItem.Header>Cash Call</MenuItem.Header>
+                <MenuItem Header="New Cash Call"
+                          Click="OpenNewCashCall"></MenuItem>
+            </MenuItem>
+            <MenuItem>
+                <MenuItem.Header>Miscellaneous</MenuItem.Header>
+                <MenuItem Header="Enter New Miscellaneous"
+                          Click="OpenNewMiscellaneous"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ListView
+            x:Name="LstMain"
+            ItemsSource="{Binding Source={StaticResource ApproveMain}}"
+            Grid.Column="4"
+            Grid.Row="2"
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="7">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Add to Payment List"
+                          Click="AddPaymentList"></MenuItem>
+                    <MenuItem Header="Open Payment List"
+                              Click="OpenPaymentListNew"></MenuItem>
+                    <MenuItem Header="Ascend">
+                        <MenuItem Header="ID"
+                                  Click="AscendId"></MenuItem>
+                        <MenuItem Header="Invoice Amount"
+                                  Click="AscendInvoiceAmount"></MenuItem>
+                        <MenuItem Header="Creditor"
+                                  Click="AscendCreditor"></MenuItem>
+                        <MenuItem Header="Currency"
+                                  Click="AscendCurrency"></MenuItem>
+                        <MenuItem Header="Invoice Date"
+                                  Click="AscendInvoiceDate"></MenuItem>
+                        <MenuItem Header="Invoice No"
+                                  Click="AscendInvoiceNo"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Descend">
+                        <MenuItem Header="ID"
+                                  Click="DescendId"></MenuItem>
+                        <MenuItem Header="Invoice Amount"
+                                  Click="DescendInvoiceAmount"></MenuItem>
+                        <MenuItem Header="Creditor"
+                                  Click="DescendCreditor"></MenuItem>
+                        <MenuItem Header="Currency"
+                                  Click="DescendCurrency"></MenuItem>
+                        <MenuItem Header="Invoice Date"
+                                  Click="DescendInvoiceDate"></MenuItem>
+                        <MenuItem Header="Invoice No"
+                                  Click="DescendInvoiceNo"></MenuItem>
+                    </MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="ID"
+                                    Width="50"
+                                    DisplayMemberBinding="{Binding Path=ID}" />
+                    <GridViewColumn Header="Description"
+                                    Width="600"
+                                    DisplayMemberBinding="{Binding Path=ReqDesc}" />
+                    <GridViewColumn Header="Creditor"
+                                    Width="300"
+                                    DisplayMemberBinding="{Binding Path=InvCreditor}" />
+                    <GridViewColumn Header="Invoice Amount"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=InvAmount, StringFormat='{}{0:#,#.0000}'}" />
+                    <GridViewColumn Header="Invoice Currency"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=InvCurr}" />
+                    <GridViewColumn Header="Approve Date"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=AppDate, StringFormat={}{0:dd-MMM-yyyy}}" />
+                    <GridViewColumn Header="Invoice Nu"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=InvNu}" />
+                    <GridViewColumn Header="Invoice Date"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=InvDate, StringFormat='{}{0:dd-MMM-yyyy}'}" />
+                    <GridViewColumn Header="SendTo"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=SendTo}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

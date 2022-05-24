@@ -1,0 +1,55 @@
+﻿<Window x:Class="G8FinApp.Budget.InputBoxForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Budget"
+        mc:Ignorable="d"
+        Title="InputBoxForm" 
+        Height="200" Width="400"
+        MinHeight="200" MinWidth="400"
+        MaxHeight="200" MaxWidth="400"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            x:Name="TxtBlock"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="8">
+            Please select new Cisi Code.
+        </TextBlock>
+        <ComboBox
+            x:Name="TxtCisiCodes"
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="7">
+        </ComboBox>
+        <Button
+            x:Name="BtnOk"
+            Grid.Row="4"
+            Grid.Column="6"
+            Grid.ColumnSpan="2"
+            Click="BtnOk_Click">OK</Button>
+    </Grid>
+</Window>

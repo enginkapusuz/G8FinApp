@@ -1,0 +1,165 @@
+﻿<Window x:Class="G8FinApp.Budget.BudgetNotApprove"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Budget"
+        mc:Ignorable="d"
+        Title="Bugdet Approve" 
+        Height="850" Width="1500"
+        WindowState="Maximized">
+    <Window.Resources>
+        <local:NotApproveMain x:Key="NotApproveMain"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Background="SteelBlue" Grid.ColumnSpan="6" Grid.RowSpan="29">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Image Source="nrdct.png" Grid.Row="3" Grid.RowSpan="2"></Image>
+            <TextBlock Grid.Row="5" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       FontSize="14"
+                       Foreground="White"
+                       FontWeight="Bold" Margin="98,23,99,25">
+                Budget Approve</TextBlock>
+        </Grid>
+
+        <Menu
+            Grid.Row="0"
+            Grid.Column="8"
+            Grid.ColumnSpan="10"
+            Background="White">
+            <MenuItem>
+                <MenuItem.Header>Approve</MenuItem.Header>
+                <MenuItem Header="Cancel" Click="CancelBidding"></MenuItem>
+                <MenuItem Header="Update"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <ListView
+            x:Name="LstMain"
+            Grid.Row="2"
+            Grid.Column="8"
+            Grid.RowSpan="10"
+            Grid.ColumnSpan="16"
+            ItemsSource="{StaticResource NotApproveMain}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50"
+                                    DisplayMemberBinding="{Binding Path=ID}"/>
+                    <GridViewColumn Header="SendTo" Width="75"
+                                    DisplayMemberBinding="{Binding Path=SendTo}"/>
+                    <GridViewColumn Header="Approve Date" Width="100"
+                                    DisplayMemberBinding="{Binding Path=AppDate, StringFormat={}{0:dd-MMM-yyyy}}"/>
+                    <GridViewColumn Header="Fund Manager Name" Width="150"
+                                    DisplayMemberBinding="{Binding Path=FmName}"/>
+                    <GridViewColumn Header="Request Desc" Width="200"
+                                    DisplayMemberBinding="{Binding Path=ReqDesc}"/>
+                    <GridViewColumn Header="Request Amount" Width="100"
+                                    DisplayMemberBinding="{Binding Path=ReqAmount, StringFormat={}{0:#,#.0000}}"/>
+                    <GridViewColumn Header="Req Currency" Width="100"
+                                    DisplayMemberBinding="{Binding Path=ReqCurr}"/>
+                    <GridViewColumn Header="Bud Currency" Width="100"
+                                    DisplayMemberBinding="{Binding Path=BdgtCurr}"/>
+                    <GridViewColumn Header="Budget Amount" Width="100"
+                                    DisplayMemberBinding="{Binding Path=BdgtAmount, StringFormat={}{0:#,#.0000}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

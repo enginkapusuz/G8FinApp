@@ -1,0 +1,175 @@
+﻿<Window x:Class="G8FinApp.Purchasing.PurchasingMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Purchasing"
+        mc:Ignorable="d"
+        Title="Purchasing Main" Height="850" Width="1500"
+        WindowState="Maximized">
+    <Window.Resources>
+        <local:ApproveMain x:Key="ApproveMain" />
+    </Window.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="15"
+            Background="SteelBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Image
+                Source="nrdct.png"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                ></Image>
+
+            <TextBlock
+                Grid.Column="1"
+                Grid.ColumnSpan="4"
+                Grid.Row="5"
+                Foreground="White"
+                FontSize="14"
+                HorizontalAlignment="Center">
+                Purchasing And Contracting
+            </TextBlock>
+        </Grid>
+
+        <Menu
+            Grid.Column="4"
+            Grid.ColumnSpan="7"
+            Background="White">
+            <MenuItem>
+                <MenuItem.Header>Bidding</MenuItem.Header>
+                <MenuItem Header="Add New Bidding"
+                          Click="OpenPurchasingBidding"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <ListView
+            x:Name="LstMain"
+            ItemsSource="{Binding Source={StaticResource ApproveMain}}"
+            Grid.Column="4"
+            Grid.Row="2"
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="7">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem
+                        Header="Delete"
+                        Click="LstMain_Delete"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID"
+                                    Width="50"
+                                    DisplayMemberBinding="{Binding Path=ID}" />
+                    <GridViewColumn Header="Description"
+                                    Width="250"
+                                    DisplayMemberBinding="{Binding Path=ReqDesc}" />
+                    <GridViewColumn Header="Pending No"
+                                    Width="50"
+                                    DisplayMemberBinding="{Binding Path=PendingNo}" />
+                    <GridViewColumn Header="CISI Code"
+                                    Width="50"
+                                    DisplayMemberBinding="{Binding Path=CisiCode}" />
+                    <GridViewColumn Header="SendTo"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=SendTo}" />
+                    <GridViewColumn Header="Approve Date"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=AppDate, StringFormat={}{0:dd-MMM-yyyy}}" />
+                    <GridViewColumn Header="Req Amount"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=ReqAmount, StringFormat={}{0:#,#.0000}}" />
+                    <GridViewColumn Header="Req Curr"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=ReqCurr}" />
+                    <GridViewColumn Header="Bugdet Amount"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=BdgtAmount, StringFormat={}{0:#,#.0000}}" />
+                    <GridViewColumn Header="Budget Curr" 
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=BdgtCurr}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

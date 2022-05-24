@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31F8AB2F-A983-47C9-8DCF-4B9DEA57BF25}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>G8FinApp</RootNamespace>
+    <AssemblyName>G8FinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Admin\AdminCisiCode.cs" />
+    <Compile Include="Admin\AdminContractNotification.cs" />
+    <Compile Include="Admin\AdminDatabase.cs" />
+    <Compile Include="Admin\AdminDepositOpen.cs" />
+    <Compile Include="Admin\AdminDepositWindow.xaml.cs">
+      <DependentUpon>AdminDepositWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminEncumbrance.cs" />
+    <Compile Include="Admin\AdminFundManager.cs" />
+    <Compile Include="Admin\AdminInvoice.cs" />
+    <Compile Include="Admin\AdminMain.xaml.cs">
+      <DependentUpon>AdminMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminProcurementSheet.cs" />
+    <Compile Include="Admin\AdminPurchaseContract.cs" />
+    <Compile Include="Admin\AdminPurchaseItem.cs" />
+    <Compile Include="Admin\BackupContract.cs" />
+    <Compile Include="Admin\BudgetCommitExcel.cs" />
+    <Compile Include="Admin\BudgetExcel.cs" />
+    <Compile Include="Admin\BudgetMainExcel.cs" />
+    <Compile Include="Admin\Deletion.cs" />
+    <Compile Include="Budget\Approve.cs" />
+    <Compile Include="Budget\ApproveListMain.cs" />
+    <Compile Include="Budget\ApproveMain.cs" />
+    <Compile Include="Budget\Budget.cs" />
+    <Compile Include="Budget\BudgetApproveList.xaml.cs">
+      <DependentUpon>BudgetApproveList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetData.cs" />
+    <Compile Include="Budget\BudgetDataMain.cs" />
+    <Compile Include="Budget\BudgetDetail.cs" />
+    <Compile Include="Budget\BudgetDetailMain.cs" />
+    <Compile Include="Budget\BudgetEncumbData.xaml.cs">
+      <DependentUpon>BudgetEncumbData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetEncumbrance.xaml.cs">
+      <DependentUpon>BudgetEncumbrance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetEnterAmount.xaml.cs">
+      <DependentUpon>BudgetEnterAmount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetMain.cs" />
+    <Compile Include="Budget\BudgetMainWin.xaml.cs">
+      <DependentUpon>BudgetMainWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetNew.xaml.cs">
+      <DependentUpon>BudgetNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetNotApproveEncumbrance.xaml.cs">
+      <DependentUpon>BudgetNotApproveEncumbrance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetRevise.xaml.cs">
+      <DependentUpon>BudgetRevise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetTransfer.xaml.cs">
+      <DependentUpon>BudgetTransfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\BudgetNotApprove.xaml.cs">
+      <DependentUpon>BudgetNotApprove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\CISICode.cs" />
+    <Compile Include="Budget\CISICodeMain.cs" />
+    <Compile Include="Budget\CisiCodeUpdateMain.cs" />
+    <Compile Include="Budget\Currency.cs" />
+    <Compile Include="Budget\CurrencyMain.cs" />
+    <Compile Include="Budget\EncumbranceSendTo.xaml.cs">
+      <DependentUpon>EncumbranceSendTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\InputBoxForm.xaml.cs">
+      <DependentUpon>InputBoxForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Budget\NotApprove.cs" />
+    <Compile Include="Budget\NotApproveMain.cs" />
+    <Compile Include="Database\ProgramConsts.cs" />
+    <Compile Include="DisbursingDepositClose.xaml.cs">
+      <DependentUpon>DisbursingDepositClose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\Account.cs" />
+    <Compile Include="Disbursing\AccountInMain.cs" />
+    <Compile Include="Disbursing\AccountInSaving.cs" />
+    <Compile Include="Disbursing\AccountOutMain.cs" />
+    <Compile Include="Disbursing\AccountOutSaving.cs" />
+    <Compile Include="Disbursing\AccountTrans.cs" />
+    <Compile Include="Disbursing\AccountMain.cs" />
+    <Compile Include="Disbursing\AccountTransaction.cs" />
+    <Compile Include="Disbursing\Approve.cs" />
+    <Compile Include="Disbursing\ApproveMain.cs" />
+    <Compile Include="Disbursing\BookCash.cs" />
+    <Compile Include="Disbursing\BookCashMain.cs" />
+    <Compile Include="Disbursing\BookPayment.cs" />
+    <Compile Include="Disbursing\BookPaymentMain.cs" />
+    <Compile Include="Disbursing\CashBookMain.cs" />
+    <Compile Include="Disbursing\CashBookNewID.cs" />
+    <Compile Include="Disbursing\CashCallMain.cs" />
+    <Compile Include="Disbursing\CashCurrentAmount.cs" />
+    <Compile Include="Disbursing\DisbursingCashCall.xaml.cs">
+      <DependentUpon>DisbursingCashCall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\DisbursingDeposit.xaml.cs">
+      <DependentUpon>DisbursingDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\DisbursingMain.xaml.cs">
+      <DependentUpon>DisbursingMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\DisbursingMiscellaneous.xaml.cs">
+      <DependentUpon>DisbursingMiscellaneous.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\Invoice.cs" />
+    <Compile Include="Disbursing\InvoiceAccount.cs" />
+    <Compile Include="Disbursing\InvoiceAccountMain.cs" />
+    <Compile Include="Disbursing\InvoiceMain.cs" />
+    <Compile Include="Disbursing\NewAccount.xaml.cs">
+      <DependentUpon>NewAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\NewOpenAmount.xaml.cs">
+      <DependentUpon>NewOpenAmount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaidOrNotPaid.xaml.cs">
+      <DependentUpon>PaidOrNotPaid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentCashBook.xaml.cs">
+      <DependentUpon>PaymentCashBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentItemsPrint.xaml.cs">
+      <DependentUpon>PaymentItemsPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentItemWin.xaml.cs">
+      <DependentUpon>PaymentItemWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentList.cs" />
+    <Compile Include="Disbursing\PaymentListAddAccount.xaml.cs">
+      <DependentUpon>PaymentListAddAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentListMainNotPaid.cs" />
+    <Compile Include="Disbursing\PaymentListMain.cs" />
+    <Compile Include="Disbursing\PaymentListWithItemPrint.xaml.cs">
+      <DependentUpon>PaymentListWithItemPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentListWithItems.xaml.cs">
+      <DependentUpon>PaymentListWithItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentListWithItemUpdate.xaml.cs">
+      <DependentUpon>PaymentListWithItemUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursing\PaymentListWithPaidItems.xaml.cs">
+      <DependentUpon>PaymentListWithPaidItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fincon\FinconApprove.cs" />
+    <Compile Include="Fincon\FinconApprovedMain.cs" />
+    <Compile Include="Fincon\FinconApproveMain.cs" />
+    <Compile Include="Fincon\FinconMain.xaml.cs">
+      <DependentUpon>FinconMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fincon\FinEncumbranceSendTo.xaml.cs">
+      <DependentUpon>FinEncumbranceSendTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\ActivityCode.cs" />
+    <Compile Include="Fiscal\ActivityCodeMain.cs" />
+    <Compile Include="Fiscal\CashCall.cs" />
+    <Compile Include="Fiscal\CashCallMain.cs" />
+    <Compile Include="Fiscal\CommitApprove.cs" />
+    <Compile Include="Fiscal\CommitApproveMain.cs" />
+    <Compile Include="Fiscal\CommitApproveNonDisbursign.cs" />
+    <Compile Include="Fiscal\Country.cs" />
+    <Compile Include="Fiscal\CountryMain.cs" />
+    <Compile Include="Fiscal\FiscalBudget.xaml.cs">
+      <DependentUpon>FiscalBudget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalCashCallEnter.xaml.cs">
+      <DependentUpon>FiscalCashCallEnter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalCloseDeposit.xaml.cs">
+      <DependentUpon>FiscalCloseDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalMiscellaneus.xaml.cs">
+      <DependentUpon>FiscalMiscellaneus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalNewDeposit.xaml.cs">
+      <DependentUpon>FiscalNewDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalPaymentList.xaml.cs">
+      <DependentUpon>FiscalPaymentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalPendingsList.xaml.cs">
+      <DependentUpon>FiscalPendingsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\Invoice.cs" />
+    <Compile Include="Fiscal\Commit.cs" />
+    <Compile Include="Fiscal\CommitMain.cs" />
+    <Compile Include="Fiscal\FiscalApprove.cs" />
+    <Compile Include="Fiscal\FiscalApproveMain.cs" />
+    <Compile Include="Fiscal\FiscalCommit.xaml.cs">
+      <DependentUpon>FiscalCommit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalMain.xaml.cs">
+      <DependentUpon>FiscalMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalPending.xaml.cs">
+      <DependentUpon>FiscalPending.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalSendToPayment.xaml.cs">
+      <DependentUpon>FiscalSendToPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\FiscalSendToTakeInvoice.xaml.cs">
+      <DependentUpon>FiscalSendToTakeInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscal\InvoiceMain.cs" />
+    <Compile Include="Fiscal\MainCommit.cs" />
+    <Compile Include="Fiscal\MainCommitMain.cs" />
+    <Compile Include="Fiscal\Miscellaneous.cs" />
+    <Compile Include="Fiscal\MiscellaneousCommitNu.cs" />
+    <Compile Include="Fiscal\MiscellaneousMain.cs" />
+    <Compile Include="Fiscal\MissCommitMain.cs" />
+    <Compile Include="Fiscal\PaymentItem.cs" />
+    <Compile Include="Fiscal\PaymentItemMain.cs" />
+    <Compile Include="Fiscal\PaymentList.cs" />
+    <Compile Include="Fiscal\PaymentListMain.cs" />
+    <Compile Include="Fiscal\Pending.cs" />
+    <Compile Include="Fiscal\PendingMain.cs" />
+    <Compile Include="MainCommitMain.cs" />
+    <Compile Include="Purchasing\Approve.cs" />
+    <Compile Include="Purchasing\ApproveMain.cs" />
+    <Compile Include="Purchasing\Bidding.cs" />
+    <Compile Include="Purchasing\BiddingMain.cs" />
+    <Compile Include="Purchasing\Contract.cs" />
+    <Compile Include="Purchasing\ContractItemsMain.cs" />
+    <Compile Include="Purchasing\ContractMain.cs" />
+    <Compile Include="Purchasing\Deposit.cs" />
+    <Compile Include="Purchasing\DepositMain.cs" />
+    <Compile Include="Purchasing\ItemsMain.cs" />
+    <Compile Include="Purchasing\Item.cs" />
+    <Compile Include="Purchasing\Notification.cs" />
+    <Compile Include="Purchasing\NotificationMain.cs" />
+    <Compile Include="Purchasing\PurchasingBidding.xaml.cs">
+      <DependentUpon>PurchasingBidding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingCloseDeposit.xaml.cs">
+      <DependentUpon>PurchasingCloseDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingContract.xaml.cs">
+      <DependentUpon>PurchasingContract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingContractItems.xaml.cs">
+      <DependentUpon>PurchasingContractItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingContractSendTo.xaml.cs">
+      <DependentUpon>PurchasingContractSendTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingItems.xaml.cs">
+      <DependentUpon>PurchasingItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingMain.xaml.cs">
+      <DependentUpon>PurchasingMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingNewDeposit.xaml.cs">
+      <DependentUpon>PurchasingNewDeposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchasingNotfications.xaml.cs">
+      <DependentUpon>PurchasingNotfications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportExcel.cs" />
+    <Compile Include="Reports\ReportFile.cs" />
+    <Compile Include="Reports\ReportFileMain.cs" />
+    <Compile Include="Reports\ReportRange.cs" />
+    <Compile Include="Reports\ReportRangeMain.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserLoginWin.xaml.cs">
+      <DependentUpon>UserLoginWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserMain.cs" />
+    <Page Include="Admin\AdminDepositWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetApproveList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetEncumbData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetEncumbrance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetEnterAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetMainWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetNotApproveEncumbrance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetRevise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetTransfer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\BudgetNotApprove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\EncumbranceSendTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Budget\InputBoxForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisbursingDepositClose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\DisbursingCashCall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\DisbursingDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\DisbursingMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\DisbursingMiscellaneous.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\NewAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\NewOpenAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaidOrNotPaid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentCashBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentItemsPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentItemWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentListAddAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentListWithItemPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentListWithItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentListWithItemUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Disbursing\PaymentListWithPaidItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fincon\FinconMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fincon\FinEncumbranceSendTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalBudget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalCashCallEnter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalCloseDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalCommit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalMiscellaneus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalNewDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalPaymentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalPending.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalPendingsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalSendToPayment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fiscal\FiscalSendToTakeInvoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Purchasing\PurchasingBidding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingCloseDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingContract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingContractItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingContractSendTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingNewDeposit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purchasing\PurchasingNotfications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserLoginWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Budget\nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Budget\NewRecord.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Budget\ToDos.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fincon\nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fiscal\nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disbursing\nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Purchasing\nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Admin\nrdct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

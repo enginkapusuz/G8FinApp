@@ -1,0 +1,306 @@
+﻿<Window x:Class="G8FinApp.Disbursing.PaymentListWithItemUpdate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Invoice Update"
+        Height="500" Width="750"
+        MinHeight="500" MinWidth="750"
+        MaxHeight="500" MaxWidth="750">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
+        <Style TargetType="TextBox" x:Key="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <local:CurrencyMain xmlns:local="clr-namespace:G8FinApp.Budget" x:Key="CurrencyMain"/>
+
+    </Window.Resources>
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan ="20"
+              Background="SteelBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Source="nrdct.png"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4">
+            </Image>
+
+            <TextBlock 
+                Grid.Column="2"
+                Grid.Row="3"
+                Grid.ColumnSpan="3"
+                FontSize="12"
+                Foreground="White">Update Invoice</TextBlock>
+        </Grid>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="4"
+            Grid.Row="1"
+            Grid.ColumnSpan="2">
+            ID  
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtId"
+            Style="{StaticResource TextBox}"
+            Grid.Column="4"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            IsEnabled="False">
+        </TextBox>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="4"
+            Grid.Row="3"
+            Grid.ColumnSpan="2">
+            Company Name
+        </TextBlock>
+        
+        <TextBox
+            x:Name="txtCompanyName"
+            Style="{StaticResource TextBox}"
+            Grid.Column="4"
+            Grid.Row="4"
+            Grid.ColumnSpan="3">
+        </TextBox>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="4"
+            Grid.Row="5"
+            Grid.ColumnSpan="2">
+            Company Address
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtCompanyAddress"
+            Style="{StaticResource TextBox}"
+            Grid.Column="4"
+            Grid.Row="6"
+            Grid.ColumnSpan="3">
+        </TextBox>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="4"
+            Grid.Row="7"
+            Grid.ColumnSpan="2">
+            Bank Name
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtBankName"
+            Style="{StaticResource TextBox}"
+            Grid.Column="4"
+            Grid.Row="8"
+            Grid.ColumnSpan="3">
+        </TextBox>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="4"
+            Grid.Row="9"
+            Grid.ColumnSpan="2">
+            IBAN Number
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtIBANNu"
+            Style="{StaticResource TextBox}"
+            Grid.Column="4"
+            Grid.Row="10"
+            Grid.ColumnSpan="3">
+        </TextBox>
+        
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="4"
+            Grid.Row="11"
+            Grid.ColumnSpan="2">
+            Invoice Number
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtInvNu"
+            Style="{StaticResource TextBox}"
+            Grid.Column="4"
+            Grid.Row="12"
+            Grid.ColumnSpan="3">
+        </TextBox>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="8"
+            Grid.Row="1"
+            Grid.ColumnSpan="2">
+            Invoice Date
+        </TextBlock>
+
+        <DatePicker
+            x:Name="txtInvDate"
+            Grid.Column="8"
+            Grid.Row="2"
+            Grid.ColumnSpan="3">
+        </DatePicker>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="8"
+            Grid.Row="3"
+            Grid.ColumnSpan="2">
+            Invoice Amount
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtInvAmount"
+            Style="{StaticResource TextBox}"
+            Grid.Column="8"
+            Grid.Row="4"
+            Grid.ColumnSpan="3"
+            IsEnabled="False">
+        </TextBox>
+
+        <TextBlock
+            x:Name="txtBlckExRate"
+            Style="{StaticResource TextBlock}"
+            Grid.Column="8"
+            Grid.Row="5"
+            Grid.ColumnSpan="2">
+            Exchange Rate
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtExRate"
+            Grid.Column="8"
+            Grid.Row="6"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            LostFocus="TxtExRate_LostFocus">
+        </TextBox>
+
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="8"
+            Grid.Row="7"
+            Grid.ColumnSpan="2">
+            Budget Amount
+        </TextBlock>
+
+        <TextBox
+            x:Name="txtBdgtAmount"
+            Grid.Column="8"
+            Grid.Row="8"
+            Grid.ColumnSpan="3"
+            IsEnabled="False"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        
+        <TextBlock
+            Style="{StaticResource TextBlock}"
+            Grid.Column="8"
+            Grid.Row="9"
+            Grid.ColumnSpan="2">
+            Invoice Currency
+        </TextBlock>
+
+        <ComboBox
+            x:Name="txtCurrency"
+            ItemsSource="{Binding Source={StaticResource CurrencyMain}}"
+            Grid.Column="8"
+            Grid.Row="10"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Text="{Binding Path=UNIONOFCURR}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button
+            Grid.Column="9"
+            Grid.Row="12"
+            Grid.ColumnSpan="2" 
+            Click="Button_Click">
+            Update
+        </Button>
+        
+    </Grid>
+    
+    
+</Window>

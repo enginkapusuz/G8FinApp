@@ -1,0 +1,228 @@
+﻿<Window x:Class="G8FinApp.Budget.BudgetNotApproveEncumbrance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Budget"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Budget Encumbrance" 
+        Height="500" Width="750"
+        MinHeight="500" MinWidth="750"
+        MaxHeight="500" MaxWidth="750">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan ="18"
+              Background="SteelBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Source="nrdct.png"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4">
+            </Image>
+
+            <TextBlock 
+                Grid.Column="2"
+                Grid.Row="3"
+                Grid.ColumnSpan="3"
+                FontSize="12"
+                Foreground="White">Encumbrance Update</TextBlock>
+        </Grid>
+
+        <!--FmNo-->
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Fund Manager No
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center" />
+        <!--FmNo-->
+
+        <!--FmName-->
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Fund Manager Name
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="4"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center" />
+        <!--FmName-->
+
+        <!--CisiCode-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Cisi Code
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="6"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center" />
+        <!--CisiCode-->
+
+        <!--CisiDesc-->
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Cisi Description
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="8"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center" />
+        <!--CisiCode-->
+
+        <!--Currency-->
+        <TextBlock
+            Grid.Row="9"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Currency
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="10"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center" />
+        <!--Currency-->
+
+        <!--AvailableAmount-->
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="8"
+            Grid.ColumnSpan="2">
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="8"
+            Grid.ColumnSpan="2"/>
+        <!--AvailableAmount-->
+
+        <!--BudgetAmount-->
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="8"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Budget Amount
+        </TextBlock>
+
+        <TextBox
+            Grid.Row="4"
+            Grid.Column="8"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--BudgetAmount-->
+
+        <!--Date-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="8"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Date
+        </TextBlock>
+
+        <DatePicker
+            Grid.Row="6"
+            Grid.Column="8"
+            Grid.ColumnSpan="2"
+            SelectedDate="{x:Static sys:DateTime.Now}" 
+            FirstDayOfWeek="Monday" SelectedDateFormat="Short"/>
+        <!--Date-->
+
+    </Grid>
+</Window>

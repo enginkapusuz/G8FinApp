@@ -1,0 +1,282 @@
+﻿<Window x:Class="G8FinApp.Fincon.FinEncumbranceSendTo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:G8FinApp.Fincon"
+        mc:Ignorable="d"
+        Title="Fincon SendTo"
+        Height="500" Width="750"
+        MinHeight="500" MinWidth="750"
+        MaxHeight="500" MaxWidth="750">
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.ColumnSpan="4"
+            Grid.RowSpan="16"
+            Background="SteelBlue">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Image
+                Grid.Column="1"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                HorizontalAlignment="Center" Source="nrdct.png"></Image>
+
+            <TextBlock
+                Grid.Column="1"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
+                Foreground="White"
+                
+                >Fincon SendTo</TextBlock>
+
+        </Grid>
+
+
+        <!--<TextBlock
+            Grid.Column="5"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">MainId</TextBlock>
+
+        <TextBox
+            x:Name="txtId"
+            Grid.Column="5"
+            Grid.Row="2"
+            Grid.ColumnSpan="1"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>-->
+
+        <!--<TextBlock
+            Grid.Column="7"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">EncumbId</TextBlock>
+
+        <TextBox
+            x:Name="txtEncumId"
+            Grid.Column="7"
+            Grid.Row="2"
+            Grid.ColumnSpan="1"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>-->
+
+        <!--Description-->
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Description</TextBlock>
+
+        <TextBox
+            x:Name="txtReqDesc"
+            Grid.Row="2"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+        <!--Description-->
+
+        <!--Sender-->
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Sender</TextBlock>
+
+        <TextBox
+            x:Name="txtSender"
+            Grid.Row="4"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+        <!--Sender-->
+
+        <!--FmName-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center">FM Name</TextBlock>
+
+        <TextBox
+            x:Name="txtFmName"
+            Grid.Row="6"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False"></TextBox>
+        <!--FmName-->
+
+        <!--ReqAmount-->
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Req Amount</TextBlock>
+
+        <TextBox
+            x:Name="txtReqAmount"
+            Grid.Row="8"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False" ></TextBox>
+        <!--ReqAmount-->
+
+        <!--Currency-->
+        <TextBlock
+            Grid.Column="9"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Currency</TextBlock>
+
+        <TextBox
+            x:Name="txtReqCurr"
+            Grid.Column="9"
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            IsEnabled="False" ></TextBox>
+        <!--Currency-->
+
+        <!--Approve Date-->
+        <TextBlock
+            Grid.Column="9"
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Approve Date</TextBlock>
+
+        <DatePicker
+            x:Name="txtDate"
+            Grid.Column="9"
+            Grid.Row="4"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            SelectedDate="{x:Static sys:DateTime.Today}"/>
+        <!--Approve Date-->
+
+        
+        <!--Approve-->
+        <TextBlock
+            Grid.Column="9"
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">Approve</TextBlock>
+
+        <ComboBox
+            x:Name="txtApprove"
+            Grid.Column="9"
+            Grid.Row="6"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center">
+            <ComboBoxItem>Approve</ComboBoxItem>
+            <ComboBoxItem>Not Approve</ComboBoxItem>
+        </ComboBox>
+        <!--Approve-->
+
+        <!--SendTo-->
+        <TextBlock
+            Grid.Column="9"
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">SendTo</TextBlock>
+
+        <ComboBox
+            x:Name="txtSendTo"
+            Grid.Column="9"
+            Grid.Row="8"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center">
+
+            <ComboBoxItem>Fiscal</ComboBoxItem>
+            <ComboBoxItem>Budget</ComboBoxItem>
+        </ComboBox>
+        <!--SendTo-->
+
+        <Button
+            x:Name="BtnSave"
+            Grid.Column="10"
+            Grid.Row="10"
+            Grid.ColumnSpan="2"
+            Click="BtnSave_Click">
+            Save
+        </Button>
+
+    </Grid>
+
+</Window>

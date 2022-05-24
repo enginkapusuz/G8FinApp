@@ -1,0 +1,310 @@
+﻿<Window x:Class="G8FinApp.Purchasing.PurchasingContractItems"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:G8FinApp.Purchasing"
+        mc:Ignorable="d"
+        Title="Purchasing Contract Items" Height="600" Width="1200">
+    <Window.Resources>
+        <local:ContractItemsMain x:Key="ContractsItemsMain" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan ="23"
+              Background="SteelBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Source="nrdct.png"
+                   Grid.Column="1"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="3">
+            </Image>
+
+            <TextBlock 
+                Grid.Column="1"
+                Grid.Row="3"
+                Grid.ColumnSpan="3"
+                FontSize="12"
+                Foreground="White">
+                P&amp;C Contract Items
+            </TextBlock>
+        </Grid>
+
+        <!--BiddingName-->
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Bidding Name
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtBiddingName"
+            Grid.Row="3"
+            Grid.Column="4"
+            Grid.ColumnSpan="5"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--BiddingName-->
+
+        <!--PcAmount-->
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="10"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            P&amp;C Amount
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtPcAmount"
+            Grid.Row="3"
+            Grid.Column="10"
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--PcAmount-->
+
+        <!--Item Nu-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="4"
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Bottom">
+            Item Nu
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtItemNu"
+            Grid.Row="6"
+            Grid.Column="4"
+            Grid.ColumnSpan="1"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--Item Nu-->
+
+        <!--Description-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="6"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Bottom">
+            Description
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtDescription"
+            Grid.Row="6"
+            Grid.Column="6"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--Description-->
+
+        <!--Quantity-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="10"
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Bottom">
+            Quantity
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtQuantity"
+            Grid.Row="6"
+            Grid.Column="10"
+            Grid.ColumnSpan="1"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--Quantity-->
+
+        <!--Unit-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="12"
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Bottom">
+            Unit
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtUnit"
+            Grid.Row="6"
+            Grid.Column="12"
+            Grid.ColumnSpan="1"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--Unit-->
+
+        <!--UnitPrice-->
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="14"
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Bottom">
+            UnitPrice
+        </TextBlock>
+
+        <TextBox
+            x:Name="TxtUnitPrice"
+            Grid.Row="6"
+            Grid.Column="14"
+            Grid.ColumnSpan="1"
+            VerticalContentAlignment="Center">
+        </TextBox>
+        <!--UnitPrice-->
+
+        <Button
+            x:Name="BtnAdd"
+            Grid.Row="6"
+            Grid.Column="16"
+            Grid.ColumnSpan="2"
+            Click="BtnAdd_Click">
+            Add&amp;Update
+        </Button>
+
+        <ListView
+            x:Name="LstMain"
+            Grid.Row="8"
+            Grid.Column="4"
+            Grid.RowSpan="10"
+            Grid.ColumnSpan="14"
+            ItemsSource="{Binding Source={StaticResource ContractsItemsMain}}"
+            MouseDoubleClick="LstMain_DoubleClick"
+            KeyDown="LstMain_KeyDown">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Item Nu"
+                                    Width="50"
+                                    DisplayMemberBinding="{Binding Path=ItemNu}"/>
+                    <GridViewColumn Header="Description"
+                                    Width="350"
+                                    DisplayMemberBinding="{Binding Path=Description}"/>
+                    <GridViewColumn Header="Quantity"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=Quantity}"/>
+                    <GridViewColumn Header="Unit"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=Unit}"/>
+                    <GridViewColumn Header="UnitPrice"
+                                    Width="50"
+                                    DisplayMemberBinding="{Binding Path=UnitPrice}"/>
+                    <GridViewColumn Header="Total Amount"
+                                    Width="100"
+                                    DisplayMemberBinding="{Binding Path=TotalAmount, StringFormat={}{0:#,#.00}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <TextBlock
+            Grid.Row="19"
+            Grid.Column="14"
+            Grid.ColumnSpan="2"
+            FontWeight="Bold"
+            HorizontalAlignment="Right">
+            Total:
+        </TextBlock>
+
+        <TextBlock
+            x:Name="TxtBlckTotalAmount"
+            Grid.Row="19"
+            Grid.Column="16"
+            Grid.ColumnSpan="2"
+            FontWeight="Bold">
+        </TextBlock>
+
+        <Button
+            x:Name="BtnSaveList"
+            Grid.Row="21"
+            Grid.Column="16"
+            Grid.ColumnSpan="2"
+            Click="BtnSave_Click">
+            Save
+        </Button>
+    </Grid>
+</Window>

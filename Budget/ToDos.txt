@@ -1,0 +1,9 @@
+﻿1. Look to LstDetailOutSelectionChanged function in BudgetMainWin.xaml.cs
+	a. Do we have to repopulate BudgetDataMain collection?
+
+2. StringFormat all decimal place.
+
+3. Look at to BudgetEncumbrance form for exchange rate process. 
+	a. Can a user enter an amount less than Bugdet Amount?
+	b. Should Request Amont equal to Budget Amount?
+
